@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('user/{id}', function ($id) {
- $id=$id*2;
+ $id=$id;
     return  $id;
 });
  
