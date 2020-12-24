@@ -1,0 +1,219 @@
+:root {
+    --body-bg-color: rgba(99, 99, 99, 99);
+    --border-color: #E4D9D9;
+    --box-bg-color: #1CC59C;
+    --bg-color: #69dce2;
+}
+
+body {
+    background-color: var(--body-bg-color);
+}
+
+.shadow:hover,
+.select-menu li:hover {
+    box-shadow: 0 0 14px 1vw rgba(0, 0, 0, 0.49);
+    transition: box-shadow 1000ms;
+}
+
+@media screen and (min-width: 580px),
+{
+    .box {
+        margin-top: 3%;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media screen and (max-width: 580px),
+{
+    .box {
+        padding-right: 5px;
+        padding-left: 5px;
+        margin-top: 0;
+        transform: translate(0, 0);
+    }
+}
+
+.box {
+    flex-wrap: wrap;
+    font-size: calc(30px + 2vw);
+    display: flex;
+    justify-content: center;
+    color: red;
+    position: absolute;
+    background-color: var(--box-bg-color);
+    min-height: 80%;
+    min-width: 80%;
+    padding-bottom: 8px;
+    border: 0.5vw solid var(--bg-color);
+    border-radius: 5px;
+    transition: box-shadow 1000ms;
+}
+
+
+/*.left-corner {
+    opacity: 0.7;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 50vh solid transparent;
+    border-bottom: 50vh solid var(--bg-color);
+}
+
+.right-corner {
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 50vh solid transparent;
+    border-top: 50vh solid var(--bg-color);
+}*/
+
+.select-menu,
+.select-menu ul {
+    display: flex;
+}
+
+.select-menu {
+    justify-content: center;
+    margin: 0;
+    flex-basis: 50%;
+    border-bottom: var(--body-bg-color) solid 1px;
+}
+
+.select-menu li>label {
+    cursor: pointer;
+}
+
+.select-menu li {
+    display: block;
+    cursor: pointer;
+    transition: box-shadow, background 1000ms;
+    list-style-type: none;
+    float: left;
+    background-color: rgba(99, 99, 99, 99);
+    border: var(--border-color) solid 3px;
+    padding: 2px;
+}
+
+.select-menu li:first-child {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    min-width: 170px;
+    margin-left: -32px;
+    margin-right: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.select-menu li:not(:first-child):not(:last-child) {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.select-menu li:last-child {
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    width: 50%;
+    margin-left: 8px;
+    margin-right: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.select-menu li:hover {
+    cursor: pointer;
+    transition: background 1000ms;
+    background-color: tomato;
+    color: seashell;
+}
+
+.select-menu {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--bg-color);
+    border: var(--border-color) solid 3px;
+    border-bottom: none;
+    background-color: rgba(99, 99, 99, 99);
+}
+
+input[id=button2]:checked~div[ class="signup"] {
+    justify-content: left;
+    display: flex;
+    visibility: visible;
+    height: auto;
+    width: auto;
+}
+
+input[id=button1]:checked~div[ class="login"] {
+    display: flex;
+    justify-content: left;
+    visibility: visible;
+    height: auto;
+}
+
+div[ class="signup"],
+div[ class="login"] {
+    padding-right: 20px;
+    padding-left: 1%;
+    padding-top: 0;
+    margin-top: 0;
+    border: var(--border-color) solid 3px;
+    border-top: none;
+    align-items: center;
+    background-color: var(--body-bg-color);
+    color: var(--bg-color);
+    font-size: calc(10px + 1.5vw);
+    display: none;
+    visibility: collapse;
+    height: 0;
+}
+
+div[ class="login"] {
+    justify-content: space-between;
+    display: flex;
+}
+
+#button1,
+#button2 {
+    visibility: collapse;
+    display: none;
+}
+
+#formarea {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1vw;
+    display: table;
+    /* border: var(--border-color) solid 3px;
+    */
+    background-color: var(--body-bg-color);
+}
+
+.loginleft,
+.loginright,
+.singupleft,
+.singupright {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -3vh;
+    padding-top: 0;
+    display: block;
+}
+
+.loginright,
+.singupright {
+    padding-left: 5px;
+    padding-top: calc(10px + 1.5vw);
+    vertical-align: text-bottom;
+}
