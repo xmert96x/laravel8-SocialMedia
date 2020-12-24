@@ -43,7 +43,7 @@
             <div class="login">
                 <div class="loginleft">Ad<br>Soyad<br>E-posta<br>Şifre<br>Şifreyi Tekradan Giriniz</div>
                 <div class="loginright">
-                    <form style="display: block;" action="{{route('login.post')}}"> 
+                    <form style="display: block;" action=""> 
                     @csrf
                         <input v-model="name"  type="text" minlength="2" required><br>
                         <input v-model="surname" type="text" minlength="2" required><br> <input v-model="email"  name="email" type="email" style="margin-bottom: 0;" required><br><input v-model="pass2" type="password" minlength="6" required>
