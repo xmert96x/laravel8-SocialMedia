@@ -17,4 +17,9 @@ class login extends Controller
 return  2*2;
 
     }
+    public function post(Request $reg)
+    {echo $reg->name;
+           return view('Login Page');
+
+    }
 }

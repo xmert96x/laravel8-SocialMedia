@@ -13,7 +13,7 @@ use App\Http\Controllers\login;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('Login Page');
 });
 
@@ -24,4 +24,5 @@ Route::get('user/{id}', function ($id) {
 });
  
 
-Route::get('/test',[login::class,'index']);
+Route::get('/form',[login::class,'index']);
+Route::post('/deneme',[login::class,'post'])    ;
