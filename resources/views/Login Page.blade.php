@@ -43,13 +43,13 @@
             <div class="login">
                 <div class="loginleft">Ad<br>Soyad<br>E-posta<br>Şifre<br>Şifreyi Tekradan Giriniz</div>
                 <div class="loginright">
-                    <form style="display: block;"method="POST" action="deneme"> 
+                    <form style="display: block;"method="POST" action="createusers"> 
                     @csrf
                         <input name="name" v-model="name"  type="text" minlength="2" required><br>
                         <input name="surname" v-model="surname" type="text" minlength="2" required><br> <input v-model="email"  name="email" type="email" style="margin-bottom: 0;" required><br><input v-model="pass2" type="password" minlength="6" required>
  
  
-                        <br> <input nanme="password"  v-model="pass1" type="password" minlength="6" required> <br><button type="submit">Giriş</button> <div v-if="pass1==pass2&&pass1!=''&&pass2!=''&&name!=''&&surname!=''&&email!=''">
+                        <br> <input name="password"  v-model="pass1" type="password" minlength="6" required> <br><button type="submit">Giriş</button> <div v-if="pass1==pass2&&pass1!=''&&pass2!=''&&name!=''&&surname!=''&&email!=''">
 
                         
 Eşittir

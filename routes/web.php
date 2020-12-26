@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\login; 
+
+use App\Http\Controllers\deneme;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,10 +21,11 @@ Route::get('/', function () {
 
 
 Route::get('user/{id}', function ($id) {
- $id=$id;
-    return  $id;
+ $id=$id; 
+    return  $id*2;
 });
  
-
+Route::post('/createusers',[deneme::class,'post'])    ;   
 Route::get('/form',[login::class,'index']);
-Route::post('/deneme',[login::class,'post'])    ;
+Route::get('/form2',[deneme::class,'index']);
+Route::post('/deneme',[login::class,'post'])    ;   

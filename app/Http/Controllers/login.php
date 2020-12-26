@@ -18,8 +18,14 @@ return  2*2;
 
     }
     public function post(Request $reg)
-    {echo $reg->name;
-           return view('Login Page');
-
+    { 
+        DB::table('members')->insert([
+            'NAME'=>$reg->name,
+            'SURNAME'=>$reg->surname,
+            'EMAİL'=>$reg->email,
+            'PASSWORD'=>$reg->password,
+        ]);
     }
+
+    
 }
