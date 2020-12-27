@@ -18,7 +18,8 @@ return  2*2;
 
     }
     public function post(Request $reg)
-    { 
+    {
+
         DB::table('members')->insert([
             'NAME'=>$reg->name,
             'SURNAME'=>$reg->surname,

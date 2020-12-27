@@ -31,9 +31,10 @@
             <div class="signup">
                 <div class="singupleft">Email<br>Şifre</div>
                 <div class="singupright">
-                    <form><label>
-                        <input name="email" type="email" style="margin-bottom: 0;" required>
-                    </label><br><input type="password" minlength="6" required>
+                    <form method="POST" action="home">
+                     @csrf
+                        <input name="email" name="email" type="email" style="margin-bottom: 0;" required>
+                    <br><input type="password"  name="password" minlength="6" required>
                         <br><button type="submit">Giriş</button>
                     </form>
                 </div>
@@ -73,5 +74,4 @@ Eşittir
 
 <script src="{{asset('js/app.js')}}"></script> 
 
- 
- 
+The current UNIX timestamp is {{ time() }}.

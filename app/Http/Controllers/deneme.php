@@ -1,28 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
+use Illuminate\Http\Request;
+use App\Models\members;
 
 class deneme extends Controller
 {
-
-    
-    public function post(Request $reg)
-  {  
-    
-    DB::table('members')->insert([
-        'NAME'=>$reg->name,
-        'SURNAME'=>$reg->surname,
-        'EMAİL'=>$reg->email,
-        'PASSWORD'=>$reg->password,
-    ]);
-  
-     } 
-
-
+ function show()
+ {
+    $data=DB::table('members')->get();
+return view('list',['members'=>$data]); 
  
-public function index(){
-    return 2;
-}
+ }
 }
