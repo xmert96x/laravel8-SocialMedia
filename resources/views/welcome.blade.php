@@ -32,7 +32,7 @@
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
-                    @endif
+                    @endauth
                 </div>
             @endif
 
@@ -123,27 +123,10 @@
                     </div>
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Build v{{ Illuminate\Foundation\Application::VERSION }}
+                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
-<div id="app">  <ul><li v-for="isim in isimler" v-text="isim"></li></ul>      
- 
- 
- 
-@php
-$records = "aaa";
-@endphp.
-
-@if ($records === 1)
-    I have one record!
-@elseif ($records > 1)
-    I have multiple records!
-@else
-    I don't have any records!
-@endif
-<script src="{{asset('js/app.js')}}"></script> 
-
