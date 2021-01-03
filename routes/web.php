@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home.index');
 });
+Route::get('/deneme/{id}', function ($id) {
+    if (is_numeric($id)) {
+        return $id * 2;
+    } else {
+        echo "hatalı";
+    }
+
+});
+
+
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return Inertia\Inertia::render('Dashboard');
+})->name('dashboard');
