@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,26 +16,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home.index');
 });
-Route::get('/deneme/{id}', function ($id) {
-    if (is_numeric($id)) {
-        return $id * 2;
-    } else {
-        echo "hatalı";
-    }
 
-});
-
-Route::get('/w', function () {
-    return view('welcome');
+Route::get('/admin', function () {
+    return view('admin.index');
 });
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
+    return view('dashboard');
 })->name('dashboard');
 
 
 
-Route::get('/deneme2', function () {
-    return Inertia\Inertia::render('welcome');
-})->name('dashboard');
+Route::get('/dede',[User::class,'login'])    ;
+
+Route::get('/dede2', function () {
+    return view('giris');
+});
+
+

@@ -130,3 +130,8 @@
         </div>
     </body>
 </html>
+
+@php echo "adana";
+    echo session()->get('page')
+@endphp
+
