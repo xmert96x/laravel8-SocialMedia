@@ -29,14 +29,30 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@if (isset(Auth::user()->name))
+                    <img  height="*" width="24" src=" {{Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name}}" class="rounded-full h-20 w-20 object-cover">
+                @else
+
+                    <i class="glyphicon glyphicon-user"></i>
+                @endif
+            </a>
             <ul class="dropdown-menu">
+                <li><a href="">Profile</a></li>
+                <form   method="POST" action="{{ route('logout') }}">
+                    @csrf  <li>
+
+                        <a  style="display: block; padding-bottom: 2px; padding-top: 2px;    " href="{{ route('logout')}}"
+                            onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                            {{ __('Çıkış Yap') }}</a>
+
+               </form> </li>
+
                 <li><a href="">More</a></li>
-                <li><a href="">More</a></li>
-                <li><a href="">More</a></li>
-                <li><a href="">More</a></li>
+                <li><a href="">Moreee</a></li>
                 <li><a href="">More</a></li>
             </ul>
         </li>
     </ul>
 </nav>
+

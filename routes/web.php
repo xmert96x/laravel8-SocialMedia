@@ -35,3 +35,6 @@ Route::get('/dede2', function () {
 });
 
 
+Route::get('/dede3', function () {
+    return view('livewire/search');
+});
