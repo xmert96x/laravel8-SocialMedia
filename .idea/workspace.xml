@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7215309-5aea-4505-a39e-faeb6b633708" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_footer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_information.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/_sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/giris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/giris.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +178,9 @@
       <workItem from="1609970087929" duration="8212000" />
       <workItem from="1610013104306" duration="2018000" />
       <workItem from="1610016288690" duration="9554000" />
-      <workItem from="1610045828835" duration="2001000" />
+      <workItem from="1610045828835" duration="2802000" />
+      <workItem from="1610058989336" duration="3448000" />
+      <workItem from="1610078177056" duration="4023000" />
     </task>
     <servers />
   </component>
@@ -200,14 +208,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="242" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609971011076" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1609971048080">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1610079898941">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609971048080" />
+    <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610079898941" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1610024093405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610024093405" />
+    <state x="586" y="8" width="747" height="1023" key="find.popup" timestamp="1610049064502">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="8" width="747" height="1023" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610049064502" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1609972589670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -38,3 +38,6 @@ Route::get('/dede2', function () {
 Route::get('/dede3', function () {
     return view('livewire/search');
 });
+Route::get('/dede5', function () {
+    return view('user.index');
+});
