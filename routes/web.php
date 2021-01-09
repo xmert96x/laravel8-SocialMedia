@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Usercheck;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,3 +42,8 @@ Route::get('/dede3', function () {
 Route::get('/dede5', function () {
     return view('user.index');
 });
+
+
+
+Route::get("profile/{id}",[Usercheck::class,"Userdata"]);
+

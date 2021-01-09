@@ -37,7 +37,7 @@
                 @endif
             </a>
             <ul class="dropdown-menu">
-                <li><a href="">Profile</a></li>
+                <li><a href="/profile/{{Auth::user()->id}}">Profile</a></li>
                 <form   method="POST" action="{{ route('logout') }}">
                     @csrf  <li>
 

@@ -2,17 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7215309-5aea-4505-a39e-faeb6b633708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_information.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/_sidebar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Usercheck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/menucheck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_08_075106_create_posts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/giris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/giris.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,13 +152,18 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1miFkKe4Eg4pRiGMJ7p7AhhYyEQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -180,14 +188,22 @@
       <workItem from="1610016288690" duration="9554000" />
       <workItem from="1610045828835" duration="2802000" />
       <workItem from="1610058989336" duration="3448000" />
-      <workItem from="1610078177056" duration="4023000" />
+      <workItem from="1610078177056" duration="4391000" />
+      <workItem from="1610089386983" duration="26371000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610092925468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610092925468" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1609969889719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -204,6 +220,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609969889719" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1610092417302">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1040@0.0.1920.1040" timestamp="1610092417302" />
     <state x="694" y="242" key="NewPhpClassDialog" timestamp="1609971011076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -216,14 +236,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610024093405" />
-    <state x="586" y="8" width="747" height="1023" key="find.popup" timestamp="1610049064502">
+    <state x="586" y="8" width="747" height="1023" key="find.popup" timestamp="1610116524336">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="586" y="8" width="747" height="1023" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610049064502" />
+    <state x="586" y="8" width="747" height="1023" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610116524336" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1609972589670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609972589670" />
+    <state x="677" y="291" key="refactoring.ChangeSignatureDialog" timestamp="1610091916045">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="677" y="291" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610091916045" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1610115515428">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610115515428" />
     <state x="623" y="225" key="search.everywhere.popup" timestamp="1609971004954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

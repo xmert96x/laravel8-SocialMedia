@@ -4,24 +4,34 @@
         <div class="panel-body">
             <div class="inner-all">
                 <ul class="list-unstyled">
-                    <li class="text-center">
-                        <img data-no-retina="" class="img-circle img-responsive img-bordered-primary" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="John Doe">
+                    <li  style="display: flex; justify-content: center" class="text-center">
+                        <img data-no-retina="" class="img-circle img-responsive img-bordered-primary" width="300" height="300" src="{{$photo}}" alt="John Doe">
                     </li>
                     <li class="text-center">
-                        <h4 class="text-capitalize">John Doe</h4>
+                        <h4 class="text-capitalize">{{$name}}</h4>
                         <p class="text-muted text-capitalize">web designer</p>
                     </li>
-                    <li>
-                        <a href="" class="btn btn-success text-center btn-block">PRO Account</a>
-                    </li>
-                    <li><br></li>
+
+                    <li></li>
                     <li>
                         <div class="btn-group-vertical btn-block">
-                            <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a>
-                            <a href="" class="btn btn-default"><i class="fa fa-sign-out pull-right"></i>Logout</a>
+                            @if($myprofile)   <a href="" class="btn btn-default"><i class="fa fa-cog pull-right"></i>Edit Account</a> @endif
+
+                        @if($myprofile)              <form   method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                        <a   style="display: block" class="btn btn-default" href="{{ route('logout')}}"
+                            onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                            <i style="margin-top: 5px" class="fa fa-sign-out pull-right"></i>  {{ __('Çıkış Yap') }}</a>
+
+                        </form>
+@endif
+
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div><!-- /.panel -->
+
