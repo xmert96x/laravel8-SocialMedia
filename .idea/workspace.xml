@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d7215309-5aea-4505-a39e-faeb6b633708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Usercheck.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/menucheck.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_08_075106_create_posts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/giris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/giris.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_topmenu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_cover.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_information.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="d7215309-5aea-4505-a39e-faeb6b633708" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
