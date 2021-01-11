@@ -1,33 +1,23 @@
+<x-guest-layout>
+    <x-jet-authentication-card>
+        <x-jet-confirmation-modal wire:model="confirmingUserDeletion">
+            <x-slot name="title">
+                Delete Account
+            </x-slot>
 
-{{--@if(Auth::check())
-{{Auth::user()}}
-@else
-giris yapin
-@endif
+            <x-slot name="content">
+                Are you sure you want to delete your account? Once your account is deleted, all of its resources and
+                data will be permanently deleted.
+            </x-slot>
 
-<form method="POST" action="{{ route('logout') }}">
-    @csrf
+            <x-slot name="footer">
+                <x-jet-secondary-button wire:click="$toggle('confirmingUserDeletion')" wire:loading.attr="disabled">
+                    Nevermind
+                </x-jet-secondary-button>
 
-    <x-jet-responsive-nav-link href="{{ route('logout')}}"
-                               onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-        {{ __('Logouts') }}
+                <x-jet-danger-button class="ml-2" wire:click="deleteUser" wire:loading.attr="disabled">
+                    Delete Account
+                </x-jet-danger-button>
+            </x-slot>
+        </x-jet-confirmation-modal>
 
-    </x-jet-responsive-nav-link>
-</form>
-
-
-@if(Auth::check())
-  echo"<img src=" {{Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name}}" class="rounded-full h-20 w-20 object-cover">"
-@else
-    echo '<i class="glyphicon glyphicon-user"></i>'
-@endif
---}}
-{{$email}}
-{{$photo}}
-{{$name}}
-@if($myprofile)
-    {{"kendi sayfan"}}
-@else
-{{"ziyaret"}}
-@endif
