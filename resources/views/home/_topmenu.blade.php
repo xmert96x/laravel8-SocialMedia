@@ -29,8 +29,8 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">@if (isset(Auth::user()->name))
-                    <img  height="*" width="24" src=" {{Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name}}" class="rounded-full h-20 w-20 object-cover">
+            <a href="#" class="dropdown-toggle" style="padding:5px; margin:0px; " data-toggle="dropdown">@if (isset(Auth::user()->name))
+                    <img  height="*" width="40" src=" {{Auth::user()->profile_photo_url}}" alt="{{ Auth::user()->name}}" class="rounded-full h- q20 w-20 object-cover">
                 @else
 
                     <i class="glyphicon glyphicon-user"></i>

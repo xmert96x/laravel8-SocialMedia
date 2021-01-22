@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\Usercheck;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
-use App\Http\Controllers\Usercheck;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +46,16 @@ Route::get('/dede5', function () {
 
 
 
-Route::get("profile/{id}",[Usercheck::class,"Userdata"]);
+Route::get("profile/{id}",[Usercheck::class,"timeline"]);
+
+
+Route::get('profile/{id}/{edit}',  [Usercheck::class,"edit"]);
+
+
+Route::get("request/{id}/{id2}", [Usercheck::class,"request"]);
+
+
+
+
+
 
