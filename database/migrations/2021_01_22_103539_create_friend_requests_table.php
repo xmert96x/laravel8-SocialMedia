@@ -17,7 +17,7 @@ class CreateFriendRequestsTable extends Migration
             $table->id();
             $table->boolean("status");
             $table->integer("sender_id");
-            $table->integer("recive_id");
+            $table->integer("receiver_id");
             $table->timestamps();
         });
     }

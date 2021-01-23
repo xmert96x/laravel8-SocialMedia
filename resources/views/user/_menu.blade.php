@@ -12,7 +12,17 @@
                         <p class="text-muted text-capitalize">web designer</p>
                     </li>
                     @if(!$user['myprofile']&& Auth::check())
-                        <li>
+                        @if(isset($user['request'])) @if($user['request']==true)
+
+
+                            <span      disabled class="btn btn-success text-center btn-block">
+
+                                {{ "İstek Gönderildi "}}</span>
+
+
+                        @else yok  @endif
+
+                        @else
 
 
                             <a class="btn btn-success text-center btn-block" href="@php $id= Auth::user()->id;  $str = Request::url();
@@ -21,7 +31,8 @@ $id2=explode('/', $str); $id2=$id2[4]; ; echo url("request/$id/$id2")  @endphp">
 
                                 {{ __('İstek Gönder') }}</a>
 
-                        </li>
+
+                        @endif
                     @endif
                     <li>
                         <div class="btn-group-vertical btn-block">
@@ -42,7 +53,7 @@ $id2=explode('/', $str); $id2=$id2[4]; ; echo url("request/$id/$id2")  @endphp">
                                            class="fa fa-sign-out pull-right"></i> {{ __('Çıkış Yap') }}</a>
 
                                 </form>
-                            @endif
+                                @endif
 
                         </div>
                     </li>
@@ -50,6 +61,19 @@ $id2=explode('/', $str); $id2=$id2[4]; ; echo url("request/$id/$id2")  @endphp">
             </div>
         </div>
     </div><!-- /.panel -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

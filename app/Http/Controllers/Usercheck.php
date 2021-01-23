@@ -18,32 +18,47 @@ class Usercheck extends Controller
                     $name = Auth::user()->name;
                     $email = Auth::user()->email;
                     $photo = Auth::user()->profile_photo_url;
-
                     return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+
                 } else {
+
                     $myprofile = false;
                     $name = $users[0]->name;
-
                     $email = $users[0]->email;
                     $photo = $users[0]->profile_photo_path;
                     if (empty($photo)) {
                         $photo = str_replace(" ", "+", $name);
                         $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
                     }
-                    return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+
+                    $request = DB::table('friend_requests')->where("sender_id", Auth::user()->id)->where("receiver_id", $id)->count();
+                    $request2 = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->count();
+                    if ($request > 0 || $request2 > 0) {
+                        if ($request2 > 0) {
+                            $data = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->get();
+                        }
+                        if ($request > 0) {
+                            $data = DB::table('friend_requests')->where("sender_id", Auth::user()->id)->where("receiver_id", $id)->get();
+                        }
+                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status];
+                    } else {
+                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+                    }
+
                 }
             } else {
                 $myprofile = false;
                 $name = $users[0]->name;
-
                 $email = $users[0]->email;
                 $photo = $users[0]->profile_photo_path;
                 if (empty($photo)) {
                     $photo = str_replace(" ", "+", $name);
                     $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
+
                 }
                 return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
             }
+
 
         } else {
             return abort(404);
@@ -79,10 +94,21 @@ class Usercheck extends Controller
             $user = $this->Userdata($id);
             $user2 = $this->Userdata($id2);
 
-            echo $id . "<br>" . $id2;
+            $id3 = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", $id2)->count();
+            $id4 = DB::table('friend_requests')->where("sender_id", $id2)->where("receiver_id", $id)->count();
+            if ($id3 == 0 && $id4 == 0) {
+
+
+                DB::insert('insert into friend_requests (sender_id,receiver_id,status) values (?, ?,?)', [$id, $id2, true]);
+                return redirect()->back();
+            } else {
+                return abort(404);
+            }
         } else {
             return abort(404);
         }
 
     }
 }
+
+
