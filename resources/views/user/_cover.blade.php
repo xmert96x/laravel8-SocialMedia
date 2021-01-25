@@ -1,4 +1,4 @@
-<div class="profile-cover">
+<div class="profile-cover" @if($page!="timeline")style="margin-bottom: 15px;" @endif>
     <div class="cover rounded shadow no-overflow">
         <div class="inner-cover">
             <!-- Start offcanvas btn group menu: This menu will take position at the top of profile cover (mobile only). -->

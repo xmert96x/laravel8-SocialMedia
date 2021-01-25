@@ -30,5 +30,6 @@ class CreateFriendRequestsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('friend_requests');
+        Schema::drop('friend_requests');
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Usercheck;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
+use App\Http\Controllers\Usercheck;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,11 @@ use App\Http\Controllers\User;
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    if (Auth::check())
+        return view('home.index');
+    else {
+        return view('giris');
+    }
 });
 
 Route::get('/admin', function () {
