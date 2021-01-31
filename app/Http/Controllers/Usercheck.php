@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class Usercheck extends Controller
 {
-    public function Userdata($id)
+    public static function Userdata($id)
     {
         $users = DB::table('users')->where("id", $id)->count();
 
@@ -16,18 +16,21 @@ class Usercheck extends Controller
                 if ($id == Auth::user()->id) {
                     $myprofile = true;
                     $name = Auth::user()->name;
+                    $surname = Auth::user()->surname;
                     $email = Auth::user()->email;
                     $photo = Auth::user()->profile_photo_url;
-                    return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+                    return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname];
 
                 } else {
 
                     $myprofile = false;
                     $name = $users[0]->name;
+                    $surname = $users[0]->surname;
                     $email = $users[0]->email;
                     $photo = $users[0]->profile_photo_path;
                     if (empty($photo)) {
-                        $photo = str_replace(" ", "+", $name);
+                        $photo = str_replace(" ", "+", $name)."+". str_replace(" ", "+", $surname);
+
                         $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
                     }
 
@@ -36,27 +39,32 @@ class Usercheck extends Controller
                     if ($request > 0 || $request2 > 0) {
                         if ($request2 > 0) {
                             $data = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->get();
+
+
+                            return ['name' => $name,  "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status, "sender" => $data[0]->sender_id];
                         }
                         if ($request > 0) {
                             $data = DB::table('friend_requests')->where("sender_id", Auth::user()->id)->where("receiver_id", $id)->get();
+                            return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status];
                         }
-                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status];
+
                     } else {
-                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname];
                     }
 
                 }
             } else {
                 $myprofile = false;
+                $surname = $users[0]->surname;
                 $name = $users[0]->name;
                 $email = $users[0]->email;
                 $photo = $users[0]->profile_photo_path;
                 if (empty($photo)) {
-                    $photo = str_replace(" ", "+", $name);
+                    $photo = str_replace(" ", "+", $name)."+". str_replace(" ", "+", $surname);
                     $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
 
                 }
-                return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
+                return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo];
             }
 
 
@@ -66,18 +74,18 @@ class Usercheck extends Controller
         }
     }
 
-    public function timeline($id)
+    public static function timeline($id)
     {
-        $user = $this->Userdata($id);
+        $user = self::Userdata($id);
 
         return view('user.index', ['user' => $user, "page" => "timeline"]);
 
 
     }
 
-    public function edit($id, $page)
+    public static function edit($id, $page)
     {
-        $user = $this->Userdata($id);
+        $user = self::Userdata($id);
 
 
         if ($user['myprofile'])
@@ -88,11 +96,12 @@ class Usercheck extends Controller
         }
     }
 
-    public function request($id, $id2)
+    public static function request($id, $id2)
     {
+        echo $id2;
         if ($id != $id2 && Auth::user()->id == $id) {
-            $user = $this->Userdata($id);
-            $user2 = $this->Userdata($id2);
+            $user = self::Userdata($id);
+            $user2 = self::Userdata($id2);
 
             $id3 = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", $id2)->count();
             $id4 = DB::table('friend_requests')->where("sender_id", $id2)->where("receiver_id", $id)->count();
@@ -107,8 +116,21 @@ class Usercheck extends Controller
         } else {
             return abort(404);
         }
+        return redirect()->back();
+    }
 
+    public static function deny_request($id)
+    {
+        echo $id;
+        $request = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->count();
+        echo $request;
+        if ($request > 0) {
+            $data = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->delete();
+
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
     }
 }
-
 

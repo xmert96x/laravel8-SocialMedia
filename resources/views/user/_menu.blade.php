@@ -8,16 +8,31 @@
                              height="300" src="{{$user['photo']}}" alt="John Doe">
                     </li>
                     <li class="text-center">
-                        <h4 class="text-capitalize">{{$user['name']}}</h4>
+                        <h4 class="text-capitalize">{{$user['name']." ".$user['surname']}}</h4>
                         <p class="text-muted text-capitalize">web designer</p>
                     </li>
                     @if(!$user['myprofile']&& Auth::check())
                         @if(isset($user['request'])) @if($user['request']==true)
 
+                            @if(isset($user['sender']))
 
-                            <span      disabled class="btn btn-success text-center btn-block">
+                                <link rel="stylesheet" href="{{asset('assets/profile')}}/hovermenu.css">
+                                <div class="dropdown       text-center btn-block">
+                                    <button class="dropbtn   btn text-center btn-block">Sana istek Gönderdi</button>
+                                    <div class="dropdown-content     text-center btn-block   ">
+                                        <a href="#">Kabul Et</a>
+                                        <a href="@php  $str = Request::url();
+
+$id=explode('/', $str); $id=$id[4]; ; echo url("request/$id/deny")  @endphp">Reddet</a>
+                                    </div>
+                                </div>
+                            @else
+                                <span      disabled class="btn btn-success text-center btn-block">
 
                                 {{ "İstek Gönderildi "}}</span>
+
+                            @endif
+
 
 
                         @else yok  @endif
@@ -34,6 +49,8 @@ $id2=explode('/', $str); $id2=$id2[4]; ; echo url("request/$id/$id2")  @endphp">
 
                         @endif
                     @endif
+
+
                     <li>
                         <div class="btn-group-vertical btn-block">
                             @if($user['myprofile'])     <a href=" @php $id= Auth::user()->id;
@@ -61,17 +78,6 @@ $id2=explode('/', $str); $id2=$id2[4]; ; echo url("request/$id/$id2")  @endphp">
             </div>
         </div>
     </div><!-- /.panel -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
