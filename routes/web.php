@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 
-Route::get('/dede',[User::class,'login'])    ;
+
 
 Route::get('/dede2/{color}', function ($color) {
     return view("deneme", ["color" => $color]);
@@ -44,17 +44,17 @@ Route::get('/dede2/{color}', function ($color) {
 
 
 Route::get('/dede5', function () {
-    return view('user.index');
+    return view('deneme');
 });
 
 
 Route::get("profile/{id}", [Usercheck::class, "timeline"])->where('id', '[0-9]+');
-Route::get('profile/{id}/{page}', [Usercheck::class, "edit"]);
+Route::get('profile/{id}/edit', [Usercheck::class, "edit"]);
 //Route::get("request/{id}/{page}", [Usercheck::class, "deny_request"])->where('name', 'deny');
 //Route::get("request/{id}/{id2}", [Usercheck::class, "request"])->where('id', '[0-9]+');
 
 
-Route::get("request/{id}/{id2}",
+/*Route::get("request/{id}/{id2}",
     function ($id, $id2) {
         if (is_numeric($id) && is_numeric($id2)) {
 
@@ -63,11 +63,41 @@ Route::get("request/{id}/{id2}",
         if ($id2 == "deny") {
 
 
-            return App\Http\Controllers\Usercheck::deny_request($id, $id);
+            return App\Http\Controllers\Usercheck::deny_request($id);
+        }
+        if ($id2 == "undo") {
+
+
+            return App\Http\Controllers\Usercheck::undo_request($id);
+        }
+        if ($id2 == "accept") {
+
+
+            return App\Http\Controllers\Usercheck::accept($id);
         }
         return redirect()->back();
-    });
+    });*/
+Route::group([
+    'prefix' => 'request/{id}',
+    'where' => [
+        'id'=> '[0-9]+'
+    ],
+], function () {
+    Route::get('/', [Usercheck::class, "request"]);
+    Route::get('deny', [Usercheck::class, "deny_request"]);
+    Route::get('undo', [Usercheck::class, "undo_request"]);
+    Route::get('accept', [Usercheck::class, "accept"]);
 
+});
 
 Route::get('admin/userlist', [admin::class, "userlist"]);
 Route::get('admin/profile/{id}', [admin::class, "user_detail"]);
+
+Route::get('friend/{id}/delete', [Usercheck::class, "delete"]);
+
+Route::get('profile/{id}/friendlist', [Usercheck::class, "friend_list"]);
+
+
+Route::get('/dede13', function () {
+    return view("user.deneme");
+});

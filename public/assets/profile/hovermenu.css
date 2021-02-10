@@ -19,9 +19,9 @@
     */z-index: 1;
 }
 
-.dropdown-content a {  flex-basis: 50%;
+.dropdown-content a {  flex: 50%;
 
-
+    border-radius: 4px;
 
     float: left;
     border: 5px solid #ddd;
@@ -54,16 +54,6 @@
 
 }
 
-.dropdown-content:after, .dropdown-content:before {
-    bottom: 100%;
-    left: 50%;
-    border: solid transparent;
-    content: "";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
 
 
 
@@ -71,6 +61,6 @@
 
     position: absolute;
     z-index: 10;
-    top: -7px;
+    top: -6px;
 
 }

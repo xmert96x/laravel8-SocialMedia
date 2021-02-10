@@ -14,7 +14,7 @@
         }
     </style>
     <div class="col-12 col-lg-12     col-xxl-12 d-flex">
-        <div class="card flex-fill">
+        <div style="display: table" class="card col-12 ">
             <div class="card-header">
 
                 <h5 class="card-title mb-0">Kullanıcı Listesi</h5>
@@ -23,10 +23,11 @@
                 <thead>
                 <tr>
                     <th>Name</th>
-                    <th class="d-none d-xl-table-cell">Surname</th>
-                    <th class="d-none d-xl-table-cell">Eposta</th>
-                    <th class="d-none d-md-table-cell">Üyelik Tarihi</th>
-                    <th class="d-none d-md-table-cell">Son Giriş</th>
+                    <th>Surname</th>
+                    <th class="d-none d-md-table-cell">Eposta</th>
+                    <th class="d-none d-xl-table-cell">Üyelik Tarihi</th>
+                    <th class="d-none d-xl-table-cell">Son Giriş</th>
+                 
                     <th></th>
                 </tr>
                 </thead>
@@ -35,10 +36,10 @@
                 @foreach($userlist as  $user)
                     <tr>
                         <td>{{$user["name"]}}</td>
-                        <td class="d-none d-xl-table-cell">{{$user["surname"]}}</td>
-                        <td class="d-none d-xl-table-cell">{{$user["email"]}}</td>
+                        <td class=" ">{{$user["surname"]}}</td>
+                        <td class="d-none d-md-table-cell">{{$user["email"]}}</td>
                         <td class="d-none d-xl-table-cell">{{$user["created_at"]}}</td>
-                        <td class="d-none d-md-table-cell">{{$user["updated_at"]}}</td>
+                        <td class="d-none d-xl-table-cell">{{$user["updated_at"]}}</td>
                         <td>  <span style="padding:3px; font-size: 10px" type="button" class="badge badge-success"
                                     data-toggle="modal" data-target="#exampleModalCenter{{$user["id"]}}">
         Profile Detayı
@@ -50,15 +51,17 @@
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLongTitle">Profile Detayı</h5>
+                                            <h4 style="font-weight: bold;" class="modal-title"
+                                                id="exampleModalLongTitle">Profil Detayı</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body" style="height:auto;">
-                                            <iframe id="child-iframe" src="{{url("/admin/profile/" . $user["id"])}}}"
-                                                    style="width: 100%; height: 100%;" frameborder="0"
-                                            ></iframe>
+                                        <div class="modal-body">
+                                            @php
+                                                echo App\Http\Controllers\admin::user_detail($user["id"]);
+                                            @endphp
+
 
                                         </div>
                                         <div class="modal-footer">
@@ -69,12 +72,13 @@
                                 </div>
                             </div>
                         </td>
+                        <th></th>
                     </tr>@endforeach
 
 
                 <tr>
 
-                    <td id="hover" colspan="6" class="d-none d-xl-table-cell">
+                    <td id="hover" colspan="6" class=" d-xl-table-cell">
                         <div style="  display: flex;
   justify-content: center;
   align-items: center;"> {{$userlist->links()}}</div>
@@ -93,8 +97,18 @@
             </table>
         </div>
     </div>
+    <style>
 
+
+        body .modal-dialog { /* Width */
+            max-width: fit-content;
+
+        }
+
+
+    </style>
 
 @endsection
+
 
 

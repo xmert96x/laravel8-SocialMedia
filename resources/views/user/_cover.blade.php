@@ -9,11 +9,13 @@
                 <ul class="dropdown-menu pull-right no-border" role="menu">
                     <li @if($page=="timeline")
                         class="active"
-                        @endif><a href="#"><i class="fa fa-fw fa-clock-o"></i>
+                        @endif><a href="{{url("/profile/".$user["id"])}}"><i class="fa fa-fw fa-clock-o"></i>
                             <span>Timeline</span></a></li>
                     <li  ><a href="#"><i class="fa fa-fw fa-user"></i> <span>About</span></a></li>
                     <li><a href="#"><i class="fa fa-fw fa-photo"></i> <span>Photos</span> <small>(98)</small></a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>(23)</small></a></li>
+                    <li @if ($page=="friendlist")
+                        class="active"
+                        @endif><a href="{{url("/profile/".$user["id"]."/friendlist")}}""><i class="fa fa-fw fa-users"></i><span> Friends </span><small>({{App\Http\Controllers\Usercheck::friend_count($user["id"])}})</small></a></li>
                     <li><a href="#"><i class="fa fa-fw fa-envelope"></i> <span>Messages</span> <small>(7
                                 new)</small></a></li>
                 </ul>
@@ -24,11 +26,15 @@
         <ul class="list-unstyled no-padding hidden-sm hidden-xs cover-menu">
             <li @if ($page==="timeline")
                 class="active"
-                @endif ><a href="#"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
+                @endif ><a href="{{url("/profile/".$user["id"])}}"><i class="fa fa-fw fa-clock-o"></i> <span>Timeline</span></a></li>
             <li ><a href="#"><i class="fa fa-fw fa-user"></i> <span>About</span></a></li>
             <li><a href="#"><i class="fa fa-fw fa-photo"></i> <span>Photos</span> <small>(98)</small></a></li>
-            <li><a href="#"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>(23)</small></a></li>
+            <li @if ($page=="friendlist")
+                class="active"
+                    @endif ><a href="{{url("/profile/".$user["id"]."/friendlist")}}"><i class="fa fa-fw fa-users"></i><span> Friends </span><small>({{App\Http\Controllers\Usercheck::friend_count($user["id"])}})</small></a></li>
 
         </ul>
     </div><!-- /.cover -->
 </div><!-- /.profile-cover -->
+
+

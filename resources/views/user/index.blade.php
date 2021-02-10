@@ -9,8 +9,9 @@
 
 
 @section('content')
-    <div class="row">
-        <div class="col-md-6">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-6">
             <div class="panel panel-success rounded shadow">
                 <div class="panel-heading no-border">
                     <div class="pull-left half">
@@ -67,7 +68,7 @@
                 </div><!-- /.panel-footer -->
             </div><!-- /.panel -->
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
             <div class="panel panel-success rounded shadow">
                 <div class="panel-heading no-border">
                     <div class="pull-left half">
@@ -133,8 +134,9 @@
                     </form><!-- /.form-horizontal -->
                 </div><!-- /.panel-footer -->
             </div><!-- /.panel -->
-        </div>
 
 
+    </div>
+    </div>
 @endsection
 
