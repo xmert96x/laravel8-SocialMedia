@@ -150,7 +150,7 @@ s
                             <div class="panel">
                                 <div class="panel-body" style="display:flex;">
                                     <div class="media" >
-                                        <a class="pull-left" href="/profile/{{$user["id"]}}">
+                                        <a class="pull-left" href="/profile/{{$data["id"]}}">
                                             <img class="thumb media-object"
                                                  src="{{$data["photo"]}}" alt=""/>
                                         </a>

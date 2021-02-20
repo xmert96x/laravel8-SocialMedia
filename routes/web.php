@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\admin;
+use App\Http\Controllers\postcheck;
 use App\Http\Controllers\User;
 use App\Http\Controllers\Usercheck;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -101,3 +103,16 @@ Route::get('profile/{id}/friendlist', [Usercheck::class, "friend_list"]);
 Route::get('/dede13', function () {
     return view("user.deneme");
 });
+Route::get('/mert', function () {
+    return view("deneme");
+});
+
+
+Route::post("/createpost",[postcheck::class,'store']);
+
+
+Route::get('/user/profile',[postcheck::class,'return']);
+
+
+
+

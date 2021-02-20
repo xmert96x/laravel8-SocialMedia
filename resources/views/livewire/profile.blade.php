@@ -5,6 +5,10 @@
 
     {!! $all!!}
     <button onclick="myFunction()">deneme</button>
+
+    <input type="file" wire:model="file"></input>
+    <input type="file" wire:model="file"></input>
+    {{$file}}
 </div>
 
 
@@ -22,13 +26,12 @@
 
 <p>Try the scrollbar in div.</p>
 
-<div  class="mert" onscroll="myFunction()">In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+<div class="mert" onscroll="myFunction()">In my younger and more vulnerable years my father gave me some advice that
+    I've been turning over in my mind ever since.
     <br><br>
-    'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had the advantages that you've had.'</div>
-
-
-
-
+    'Whenever you feel like criticizing anyone,' he told me, just remember that all the people in this world haven't had
+    the advantages that you've had.'
+</div>
 
 
 
@@ -51,6 +54,9 @@
 
         }
     }
+
+
+
 </script>
 @livewireScripts
 

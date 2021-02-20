@@ -42,7 +42,11 @@
     }
 </style>
 
-<script>
+<script>function removec() {
+        document.getElementById("myList2").removeChild(myList2.childNodes[0]);
+    }
+
+
     function focusfunct() {
         document.querySelector("#post").setAttribute("id", "post2");
     }
@@ -51,7 +55,7 @@
     function display(a) {
 
         a.style.height = "";
-        a.style.height =a.scrollHeight + "px";
+        a.style.height = a.scrollHeight + "px";
         focusfunct();
 
     }
@@ -80,123 +84,167 @@
     <div class="col-lg-9 col-md-9 col-sm-8">
 
         @include("user._cover")
-        @if($page=="timeline")
+        @if($page=="timeline"&&$user['myprofile'])
             <div class="divider"></div>
             <div class="panel rounded shadow">
-                <div id="post" style="display: block"
-                     oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
-                   disabled>
-                    <form action="...">
-                        <textarea onkeyup="display2(this);" onkeydown="focusfunct()" onfocus="focusfunct(this)" onpaste="this.onchange();"    oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
-                                    id="input{{"main"}}"
+                <form method="POST" enctype="multipart/form-data" action="{{url('createpost')}}">    @csrf
+                    <div id="post" style="display: block"
+                         oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                         disabled>
 
-                        class="form-control input-lg no-border" style=" resize: none; overflow: hidden;"
-                        placeholder="What are you doing?..."></textarea>
+                        <textarea name="posttext" onkeyup="display2(this)" onkeydown="focusfunct()"
+                                  onfocus="focusfunct(this)" onpaste="this.onchange();"
+                                  oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
+                                  id="input{{"main"}}"
 
-
-                    </form>
-                    <br></div>
-                <div class="panel-footer">
-                    <button class="btn btn-success pull-right mt-5">POST</button>
-                    <ul class="nav nav-pills">
-                        <li><a href="#"><i class="fa fa-user"></i></a></li>
-                        <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
-                        <li> <a href="#">    <div class="inputWrapper" style="display: table">
-                                <i class="fa fa-camera"></i>  <input    accept="image/x-png,image/gif,image/jpeg"   onchange="myFunction2()" id="file2" class="fileInput" type="file" name="file1"/>
-                            </div>
-                            </a>
+                                  class="form-control input-lg no-border" style=" resize: none; overflow: hidden;"
+                                  placeholder="What are you doing?..."></textarea>
 
 
-                        </li>
-                        <li id="emoji-button{{"main"}}"><a href="javascript:void(0)"><i class="fa fa-smile-o"></i></a>
-                        </li>
-                    </ul><!-- /.nav nav-pills -->
-                </div><!-- /.panel-footer -->
-            </div><!-- /.panel -->
+                        <br>
+                        <div id="post-imagelist" style="    width: 100%;
+    height: 100%;
+overflow:auto;
+    white-space:nowrap;"></div>
+                    </div>
+                    <div class="panel-footer">
+                        <button type="submit" onclick="removec()" class="btn btn-success pull-right mt-5">POST</button>
+                        <ul class="nav nav-pills">
+                            <li><a href="#"><i class="fa fa-user"></i></a></li>
+                            <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
+                            <li><a href="#">
+                                    <div class="inputWrapper" style="display: table">
+                                        <i class="fa fa-camera"></i>
+                                        <div id="myList2"><input multiple accept="image/x-png,image/gif,image/jpeg"
+                                                                 id="input0"
+                                                                 onchange="myFunctionc(this.id)" name="input0[]"
+                                                                 type="file"
+                                                                 class="fileInput"/></div>
+                                    </div>
+                                </a>
 
-            <script>
 
-                var input = document.querySelector(".emoji-picker__search");
+                            </li>
+                            <li id="emoji-button{{"main"}}"><a href="javascript:void(0)"><i
+                                        class="fa fa-smile-o"></i></a>
+                            </li>
+                </form>
+                </ul><!-- /.nav nav-pills -->
+            </div><!-- /.panel-footer -->
+    </div><!-- /.panel -->
+
+    <script>
+
+        var input = document.querySelector(".emoji-picker__search");
 
 
-                const button{{"main"}} = document.querySelector('#emoji-button{{"main"}}');
+        const button{{"main"}} = document.querySelector('#emoji-button{{"main"}}');
 
-                const picker{{"main"}} = new EmojiButton();
-                picker{{"main"}}.on(`emoji`, emoji => {
-                    document.querySelector('#input{{"main"}}').value += emoji;
+        const picker{{"main"}} = new EmojiButton();
+        picker{{"main"}}.on(`emoji`, emoji => {
+            document.querySelector('#input{{"main"}}').value += emoji;
+        });
+        button{{"main"}}.addEventListener('click', () => {
+            picker{{"main"}}.togglePicker(button{{"main"}});
+        });
+
+    </script> @else
+
+    @endif
+
+
+    <div class="row" style="         max-width:875px; display: flex;  ">
+        <style>
+
+            .inputWrapper {
+                display: flex;
+                overflow: hidden;
+                position: relative;
+                cursor: pointer;
+                /*Using a background color, but you can use a background image to represent a button*/
+
+            }
+
+            .fileInput {
+                display: table;
+                cursor: pointer;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                /*This makes the button huge so that it can be clicked on*/
+                font-size: 50px;
+            }
+
+            .hidden {
+                /*Opacity settings for all browsers*/
+                opacity: 0;
+                -moz-opacity: 0;
+                filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+            }
+
+
+            /*Dynamic styles*/
+            .inputWrapper:hover {
+
+            }
+
+            .inputWrapper.clicked {
+
+            }
+
+
+        </style>
+
+        <script>$(function () {
+                $(".inputWrapper").mousedown(function () {
+                    var button = $(this);
+                    button.addClass('clicked');
+                    setTimeout(function () {
+                        button.removeClass('clicked');
+                    }, 50);
                 });
-                button{{"main"}}.addEventListener('click', () => {
-                    picker{{"main"}}.togglePicker(button{{"main"}});
-                });
-
-            </script>                     @else
-
-        @endif
+            });
+        </script>
 
 
-        <div class="row" style="         max-width:875px; display: flex;  ">
-<style>
+        <script>
+            var y = 0;
+            var z = 0;
 
-    .inputWrapper {display: flex;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-        /*Using a background color, but you can use a background image to represent a button*/
-
-    }
-
-    .fileInput { display: table;
-        cursor: pointer;
-        height: 100%;
-        position:absolute;
-        top: 0;
-        right: 0;
-        /*This makes the button huge so that it can be clicked on*/
-        font-size:50px;
-    }
-    .hidden {
-        /*Opacity settings for all browsers*/
-        opacity: 0;
-        -moz-opacity: 0;
-        filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
-    }
+            function myFunctionc(name) {
+                document.getElementById("post-imagelist").innerHTML += "<img src='' style='max-height: 250px; max-width:250px' id='1 resim" + z + "'>";
+                var input = document.getElementById(name);
 
 
-    /*Dynamic styles*/
-    .inputWrapper:hover {
-
-    }
-    .inputWrapper.clicked {
-
-    }
-
-
-</style>
-
-            <script>$(function() {
-                    $(".inputWrapper").mousedown(function() {
-                        var button = $(this);
-                        button.addClass('clicked');
-                        setTimeout(function(){
-                            button.removeClass('clicked');
-                        },50);
-                    });
-                });
-            </script>
-
-
-            <script>var y=0; function myFunction2() {  document.getElementById("post").innerHTML+="<img src='' style='max-height: 250px; max-width:250' id='1 resim"+y+"'>"
-
-
-                    var input = document.getElementById("file2");
+                for (i = 0; i < input.files.length; i++) {
                     var fReader = new FileReader();
-                    fReader.readAsDataURL(input.files[0]);
-                    fReader.onloadend = function(event){
+                    fReader.readAsDataURL(input.files[i]);
+                    fReader.onloadend = function (event) {
 
-                        var img = document.getElementById("1 resim"+y);
+                        var img = document.getElementById("1 resim" + z);
                         img.src = event.target.result;
 
-                        y++; }
-                 }
 
-            </script>
+                        z++;
+                        document.getElementById("post-imagelist").innerHTML += "<img src='' style='max-height: 250px; max-width:250px' id='1 resim" + z + "'>";
+                        document.getElementById("post-imagelist").scrollLeft = document.getElementById("post-imagelist").scrollWidth;
+                    }
+
+                    document.getElementById("post-imagelist").scrollLeft = document.getElementById("post-imagelist").scrollWidth;
+                }
+                var itm = document.getElementById("myList2").firstChild;
+                var cln = itm.cloneNode(true);
+                document.getElementById("myList2").appendChild(cln);
+
+
+                y++;
+
+                var itm = document.getElementById("myList2").firstChild.id = "input" + y;
+                document.getElementById("post-imagelist").scrollLeft = document.getElementById("post-imagelist").scrollWidth;
+
+            }
+
+
+        </script>
+

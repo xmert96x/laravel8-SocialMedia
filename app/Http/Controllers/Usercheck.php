@@ -34,7 +34,7 @@ class Usercheck extends Controller
 
                         $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
                     }
-
+                    else{$photo=url("storage/".$users[0]->profile_photo_path);}
                     $request = DB::table('friend_requests')->where("sender_id", Auth::user()->id)->where("receiver_id", $id)->count();
                     $request2 = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->count();
                     if ($request > 0 || $request2 > 0) {
@@ -73,7 +73,9 @@ class Usercheck extends Controller
                     $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
 
                 }
+                else{$photo=url("storage/".$users[0]->profile_photo_path);}
                 return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo,"id"=>$id];
+
             }
 
 
