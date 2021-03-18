@@ -2,144 +2,131 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7215309-5aea-4505-a39e-faeb6b633708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Postcheck.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Post.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_13_124709_drop.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_14_103541_drop2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dropColumn('media')" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729616.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729628.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729638.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729675.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729688.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316729695.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131697543.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316975465.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131697902.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316979092.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131697994.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161316979966.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131973101.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731012.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731027.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731034.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731038.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731042.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731058.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731074.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731085.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319731098.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319737515.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319737519.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131973752.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319737562.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319737584.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319737589.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319788126.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319788196.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319790139.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319790157.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319790837.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319790886.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319807560.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319807573.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131980863.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319808647.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319808679.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319808699.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809913.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809942.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809945.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809946.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809967.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319809975.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319825935.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319825974.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319825975.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319825988.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319857180.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319858424.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319858443.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319858498.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319861713.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16131986172.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319861723.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319861747.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319861792.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161319861797.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323132114.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323136127.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323137928.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323139020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323140486.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323141150.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323150570.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323157059.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160337.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160342.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160343.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160360.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160365.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160369.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323160385.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323174322.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323620483.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161323621945.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16132362195.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847310.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16132984733.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847330.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847332.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847342.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847356.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847369.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847377.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847391.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847395.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329847399.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856814.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856822.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856836.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856841.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856845.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856850.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856857.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856873.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856876.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856877.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856878.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/16132985689.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329856893.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161329859240.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161330597861.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161330921115.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161331040811.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161331040831.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/161331040886.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/Http/Controllers/postTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/PostComments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/161503824782.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Usercheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Usercheck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/FortifyServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/JetstreamServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/JetstreamServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_08_075106_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_08_075106_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/admin/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/index.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/index.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/giris.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/giris.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Postcheck.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Postcheck.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_13_124709_drop.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_24_120009_create_post_comments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_14_103541_drop2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729616.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729628.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729638.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729675.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729688.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316729695.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131697543.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316975465.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131697902.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316979092.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131697994.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161316979966.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131973101.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731012.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731027.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731038.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731058.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731074.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731085.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319731098.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319737515.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319737519.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131973752.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319737562.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319737584.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319737589.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319788126.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319788196.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319790139.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319790157.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319790837.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319790886.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319807560.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319807573.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131980863.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319808647.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319808679.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319808699.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809913.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809942.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809945.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809946.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809967.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319809975.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319825935.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319825974.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319825975.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319825988.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319857180.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319858424.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319858443.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319858498.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319861713.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16131986172.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319861723.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319861747.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319861792.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161319861797.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323132114.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323136127.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323137928.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323139020.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323140486.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323141150.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323150570.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323157059.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160337.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160342.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160343.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160360.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160365.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160369.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323160385.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323174322.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323620483.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161323621945.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16132362195.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847310.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16132984733.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847330.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847332.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847342.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847356.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847369.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847377.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847391.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847395.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329847399.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856814.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856822.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856836.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856841.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856845.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856850.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856857.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856873.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856876.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856877.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856878.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/16132985689.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329856893.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161329859240.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161330597861.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161330921115.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161331040811.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161331040831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/161331040886.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/logout-other-browser-sessions-form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/_information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/_information.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/friend_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/friend_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/Http/Controllers/postTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Http/Controllers/postTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +147,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -304,12 +292,12 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Asus\Desktop\laravel\SocialNetwork\resources\views\admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Asus\Desktop\laravel\SocialNetwork\public\assets" />
       <recent name="C:\Users\Asus\Desktop\laravel\SocialNetwork\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Asus\Desktop\laravel\SocialNetwork\resources\views\admin" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -395,6 +383,43 @@
       <workItem from="1613650728874" duration="17748000" />
       <workItem from="1613723879982" duration="970000" />
       <workItem from="1613727551675" duration="2605000" />
+      <workItem from="1613783046895" duration="515000" />
+      <workItem from="1613784500389" duration="2758000" />
+      <workItem from="1613825881504" duration="5604000" />
+      <workItem from="1613903573909" duration="2681000" />
+      <workItem from="1613986597607" duration="739000" />
+      <workItem from="1614166890365" duration="6889000" />
+      <workItem from="1614195757776" duration="18022000" />
+      <workItem from="1614337662990" duration="1032000" />
+      <workItem from="1614643436938" duration="8654000" />
+      <workItem from="1614688670477" duration="235000" />
+      <workItem from="1614688928055" duration="115000" />
+      <workItem from="1614689067875" duration="94000" />
+      <workItem from="1614689179140" duration="128000" />
+      <workItem from="1614689329066" duration="220000" />
+      <workItem from="1614689581317" duration="36000" />
+      <workItem from="1614689635385" duration="2063000" />
+      <workItem from="1614691743421" duration="1141000" />
+      <workItem from="1614706344061" duration="4927000" />
+      <workItem from="1614767730789" duration="1600000" />
+      <workItem from="1614797496151" duration="69000" />
+      <workItem from="1614797580935" duration="52000" />
+      <workItem from="1614797650196" duration="116000" />
+      <workItem from="1614797783385" duration="9108000" />
+      <workItem from="1614935280312" duration="461000" />
+      <workItem from="1614956312000" duration="5000" />
+      <workItem from="1614971509309" duration="1758000" />
+      <workItem from="1615035161171" duration="12187000" />
+      <workItem from="1615118666843" duration="1066000" />
+      <workItem from="1615121148575" duration="18467000" />
+      <workItem from="1615197139349" duration="6380000" />
+      <workItem from="1615239380960" duration="6514000" />
+      <workItem from="1615327055121" duration="9082000" />
+      <workItem from="1615370882567" duration="23734000" />
+      <workItem from="1615731881941" duration="1190000" />
+      <workItem from="1615845772234" duration="1235000" />
+      <workItem from="1615899333026" duration="14848000" />
+      <workItem from="1615984504913" duration="2343000" />
     </task>
     <servers />
   </component>
@@ -405,18 +430,22 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="839" y="418" key="#Custom_Plugin_Repositories" timestamp="1612347515584">
+    <state x="839" y="418" key="#Custom_Plugin_Repositories" timestamp="1614797743356">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="839" y="418" key="#Custom_Plugin_Repositories/0.0.1920.1040@0.0.1920.1040" timestamp="1612347515584" />
-    <state x="586" y="198" key="#Inspections" timestamp="1613389709526">
+    <state x="839" y="418" key="#Custom_Plugin_Repositories/0.0.1920.1040@0.0.1920.1040" timestamp="1614797743356" />
+    <state x="586" y="198" key="#Inspections" timestamp="1614684747573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1613389709526" />
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1614684747573" />
     <state x="552" y="178" key="#Intentions" timestamp="1613077831445">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1613077831445" />
+    <state x="552" y="160" key="#Plugins" timestamp="1614688903476">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="160" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1614688903476" />
     <state x="552" y="178" width="1092" height="729" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611382700943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -425,6 +454,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="711" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1612697119772" />
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1614688205012">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614688205012" />
     <state x="629" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1613214657698">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -437,10 +470,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613693158247" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1611605424583">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1614797750600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611605424583" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614797750600" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610299978459">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -473,10 +506,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613686024517" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1612347562937">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1614810597053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612347562937" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614810597053" />
     <state x="565" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1613389408934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -485,10 +518,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="667" y="327" width="586" height="406" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613214622385" />
-    <state x="586" y="8" width="747" height="1023" key="find.popup" timestamp="1613699109107">
+    <state x="586" y="8" width="747" height="1023" key="find.popup" timestamp="1615291928496">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="586" y="8" width="747" height="1023" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613699109107" />
+    <state x="586" y="8" width="747" height="1023" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615291928496" />
     <state x="601" y="246" width="700" height="530" key="recent.locations.popup" timestamp="1609972589670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -497,17 +530,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="677" y="291" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613214322174" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1613304799936">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1615947592978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613304799936" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615947592978" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612824968643">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612824968643" />
-    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1611318474148">
+    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1614858400450">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611318474148" />
+    <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614858400450" />
   </component>
 </project>

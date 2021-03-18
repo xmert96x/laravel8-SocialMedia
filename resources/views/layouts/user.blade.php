@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
     <link rel="stylesheet" href="{{asset('assets/profile')}}/profile_page.css">
     <link rel="stylesheet" href="{{asset('assets/profile')}}/menu.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 <style type="text/css">

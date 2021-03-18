@@ -2,7 +2,7 @@
 
 namespace Http\Controllers;
 
-use App\Http\Controllers\postcheck;
+use App\Http\Controllers\Postcheck;
 use PHPUnit\Framework\TestCase;
 
 class postTest extends TestCase
