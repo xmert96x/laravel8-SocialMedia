@@ -87,9 +87,11 @@ class Usercheck extends Controller
 
     public static function timeline($id)
     {
-        $user = self::Userdata($id);
 
-        return view('user.index', ['user' => $user, "page" => "timeline"]);
+
+        $user = self::Userdata($id);
+        $Post = DB::table('posts')->where("author", $id)->orderBy("id", "DESC")->get();
+        return view('user.index', [ 'user' => $user, "page" => "timeline","posts" => $Post]);
 
 
     }

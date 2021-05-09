@@ -9,11 +9,15 @@
 
 
 @section('content')
-      <div class="container ">
-        <div class="row"  style=" @if(!$user['myprofile']) margin-top: 15px; @endif display: flex;  "  >
-       @livewire('post', ['user' => $user])
+    <div class="container ">
+        <div class="row" style=" @if(!$user['myprofile']) margin-top: 15px; @endif  ">
+            @foreach($posts as $item)
 
 
+
+                @livewire('post', ['item' => $item,'user'=>$user])
+
+            @endforeach
         </div>
     </div>
 @endsection

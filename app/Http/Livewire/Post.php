@@ -4,17 +4,25 @@ namespace App\Http\Livewire;
 
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Post extends Component
 {
+    use WithFileUploads;
+
     public $Userid;
     public $user;
     public $Post;
     public $media;
     public $like;
-    public $x = 12;
-    public $text=[];
+    public $x      = 12;
+    public $text;
     public $file;
+    public $imglist2;
+    public $scroll ;
+
+
+    public $rand;
 
     public function likes($like, $id)
     {
@@ -32,17 +40,21 @@ class Post extends Component
         $this->x++;
     }
 
-    public function mount($user)
+    public function mount($item, $user)
     {
-        $this->Userid = $user['id'];
-
+        $this->Userid = $item->id;
+        $this->dispatchBrowserEvent('name-updated2', ['itemid' => $this->Userid]);
     }
 
     public function render()
     {
 
-        $this->Post = DB::table('posts')->where("author", $this->Userid)->orderBy("id", "DESC")->get();
 
+        $this->rand = rand(5, 15);
+        $this->dispatchBrowserEvent('name-updated', ['itemid' => $this->Userid]);
+
+        $this->Post = DB::table('posts')->where("id", $this->Userid)->first();
+        $this->Post = json_decode(json_encode($this->Post), true);
 
         return view('livewire.post');
     }
