@@ -1,4 +1,6 @@
-<div class="col-sm-6">
+<div class="col-sm-12">
+    <?php//  $image_info = getimagesize("https://www.itopya.com/picture258x50/logo_20200907180648-0709202018064815.png"); print_r($image_info); $width=($image_info[0]/$image_info[1])*100; echo $width
+    ?>
 
 
     <div class="panel panel-success rounded shadow">
@@ -21,61 +23,109 @@
             </div><!-- /.pull-right -->
             <div class="clearfix"></div>
         </div><!-- /.panel-heading -->
-        <div class="panel-body no-padding">
+        <div style="overflow: hidden;  word-break: break-all;" class="panel-body no-padding">
             <div class="inner-all block">
                 <!--    <h4>Upload on my album :D</h4>-->
                 <p>
                     {{$Post['content']}}              </p>
                 <!--    <blockquote class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, delectus!</blockquote>-->
                 @php $media = $Post["media"] ;
-            $media = json_decode($media);  @endphp
+                $media = json_decode($media);  @endphp
+                @php $count=0; @endphp
                 @if(isset($media))
                     @foreach( $media as $img)
-                        <img data-no-retina="" src="{{url($img)}}" alt="..." width="100"> @endforeach
+                        @php $count++; @endphp
+
+                        @if($count<=4||count($media)<4)
+                            @php     list($width, $height) = getimagesize("$img");
+
+                              $image_info = getimagesize("$img");
+
+                            if($height>$width) {$ratio=1;}
+                            else {$ratio=2;} @endphp    @if($ratio==1)
+                                <div class="thumbnail2">
+                                    <img src="{{url($img)}}" height="150" alt="Image"/>
+                                </div>
+                            @endif
+                            @if($ratio==2)
+                                <div class="thumbnail2">
+                                    <img src="{{url($img)}}" height="150" class="portrait2"/>
+                                </div>
+                            @endif
+                        @endif
+
+                        @if($count==4&&count($media)>4)
+                            @if($ratio==1)  <span class="thumbnail2" style="position:relative; "><img
+                                    style="position: absolute; z-index:1"
+                                    data-no-retina="" src="{{url($img)}}"
+                                    alt=""
+                                    height="100">
+                                <div style=" display:table;        width:150px; height:150px;background-color:#999999; opacity: 50%; z-index: 3;  position: relative;
+
+
+                                      word-break: normal;
+ "><span style="  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);"><h1>+{{count($media)-4}}</h1></span></div>
+                            </span> @endif @if($ratio==2)  <span class="thumbnail2"
+                                                                 style="position:relative;  "><img
+                                    style="position: absolute; z-index:1"
+                                    data-no-retina="" class="portrait2" src="{{url($img)}}"
+                                    alt=""
+                                    height="100">
+                                <div style="  width:150px; height:150px;background-color:#999999; opacity: 50%; z-index: 3;position: relative;
+
+   word-break: normal;
+
+
+       "><span style=" display:table;  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);"> <h1>+{{count($media)-4}} </h1></span></div>
+                                </span>@endif
+                        @endif
+
+                    @endforeach
                 @endif
             </div><!-- /.inner-all -->
-            <div class="inner-all bg-success">
-                view all <a href="#">7 comments</a>
+            <div wire:click="addcomments" style="clear: both;  visibility:{{$show}};"
+                 class="cursor inner-all bg-success">
+                Daha Fazla Yorum Göster
             </div>
         </div><!-- /.panel-body -->
         <div class="panel-footer no-padding no-border">
+            <!--baslama-->
+            @foreach($comments as $item)  @php $userdata=App\Http\Controllers\Usercheck::Userdata($item["author"]);// print_r( $userdata); @endphp
             <div class="media inner-all no-margin">
                 <div class="pull-left">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="..."
+                    <img src="{{$userdata["photo"]}}" alt="..."
                          class="img-post2">
                 </div><!-- /.pull-left -->
                 <div class="media-body">
-                    <a href="#" class="h4">John Doe</a>
-                    <small class="block text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. </small>
+                    <a href="{{url("/profile")."/".$item["author"]}}"
+                       class="h4">{{$userdata["name"]}} {{$userdata["surname"]}}</a>
+                    <small class="block text-muted">{{$item["text"]}}     </small>
                     <em class="text-xs text-muted">Posted on <span
                             class="text-danger">Dec 08, 2014</span></em>
-                </div><!-- /.media-body -->
-            </div><!-- /.media -->
-            <div class="line no-margin"></div><!-- /.line -->
-            <div class="media inner-all no-margin">
-                <div class="pull-left">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="..."
-                         class="img-post2">
-                </div><!-- /.pull-left -->
-                <div class="media-body">
-                    <a href="#" class="h4">John Doe</a>
-                    <small class="block text-muted">Quaerat, impedit minus non commodi facere doloribus nemo
-                        ea voluptate nesciunt deleniti.</small>
-                    <em class="text-xs text-muted">Posted on <span
-                            class="text-danger">Dec 08, 2014</span></em>
-                </div><!-- /.media-body -->
-            </div><!-- /.media -->
-            <div class="line no-margin"></div><!-- /.line -->
+                    <br> @php $media = $item["media"] ;
+            $media = json_decode($media);  @endphp
+
+
+                 {{print_r($media)}}
+                </div> <!-- /.media-body -->
+            </div><!-- /.media -->   @endforeach
             <div>
-                <form wire:submit.prevent="" action="#" class="form-horizontal inner-all">
+                <form enctype="multipart/form-data" action="#" class="form-horizontal inner-all">
                     <div class="has-feedback no-margin   " style="position: relative">
                         @if (Auth::check())
-                            <div style="padding: 0;">    <textarea wire:model="text"
+                            <div style="padding: 0;">    <textarea wire:target="Savecommnets"
+                                                                   wire:loading.attr="disabled"
+                                                                   wire:keydown.enter="Savecommnets" wire:model="text"
 
                                                                    id="input{{$Post['id']}}"
                                                                    class="form-control     "
-                                                                   style="height: {{$scroll}};  resize: none; margin: 0; z-index:-100;   overflow-y:hidden; padding-right: 5px;   padding-bottom: 38px;  "
+                                                                   style="   resize: none; margin: 0; z-index:-100;   overflow-y:hidden; padding-right: 5px;   padding-bottom: 38px;  "
                                                                    onload="warning2(this.id)"
                                                                    onchange="warning2(this.id)"
                                                                    oninput="warning2(this.id)" type="text"
@@ -84,7 +134,7 @@
 
                             <div id="imglist{{$Post['id']}}"
                                  style="position: absolute; bottom: 7px; display:block; padding-left: 5px;
-                                        width:100%;"> </div>
+                                        width:100%;" wire:model="images"></div>
 
                             <div id="buttonbox{{$Post['id']}}"
                                  style=" position: absolute;  bottom:0px; right:2px;  padding: 0;   display:inline-table;    height: 38px;">
@@ -136,8 +186,6 @@
 
 @livewireStyles
 
-<script src="{{ mix('js/app.js') }}"></script>
-
 
 @livewireScripts
 
@@ -145,7 +193,6 @@
 
 
     function showimage(y) {
-        console.log("y:" + typeof (y));
         if (typeof value == "string" && value.indexOf('$') > -1
         ) {
             if (y.includes("file")) {
@@ -166,9 +213,9 @@
         input.style.height = input.scrollHeight + "px"
 
 
-        imglist.innerHTML = "<span id='imglistcontent" + number + "' style='  position:relative; height: fit-content'> <i id='close'  onclick='postimagedelete(\"" + number + "\")'  class='fa fa-times'></i><img src='    @if($file){{$file->temporaryUrl()}} @endif' style='max-height: 250px; max-width:250px' id='resim" + number + "'></span>";
+        imglist.innerHTML = "<span id='imglistcontent" + number + "' style='  position:relative; height: fit-content'> <i id='close'  onclick='postimagedelete(\"" + number + "\")'  class='fa fa-times'></i><img src='     ' style='max-height: 250px; max-width:250px' id='resim" + number + "'></span>";
 
-        for (i; i < file.files.length; i++) {
+        for (i = 0; i < file.files.length; i++) {
             var fReader = new FileReader();
             fReader.readAsDataURL(file.files[i]);
             fReader.onloadend = function (event) {
@@ -198,17 +245,24 @@
         };
 
     }
-    window.addEventListener('name-updated2', event => {
-        showimage(event.detail.itemid);})
+
     window.addEventListener('name-updated', event => {
+
+        note = document.getElementById("note" + event.detail.itemid);
+        x = document.getElementById("input" + event.detail.itemid);
+
+
+        if (x.value !== "") {
+
+            note.innerHTML = "Göndermek için <b>enter</b> tuşuna basın";
+        }
+
         showimage(event.detail.itemid);
-    warning2(event.detail.itemid);
+        warning2(event.detail.itemid);
 
 
     })
 
-    var i = 0;
-    var post = [["1", "2"]];
 
     function warning2(y) {
 
@@ -287,3 +341,32 @@
 
 </script>
 
+<style>
+    .thumbnail2 {
+        float: left;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+    }
+
+    .thumbnail2 img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 100%;
+        width: auto;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .thumbnail2 img.portrait2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .cursor:hover {
+        cursor: pointer;
+    }
+</style>

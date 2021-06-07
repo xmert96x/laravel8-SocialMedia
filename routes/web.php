@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\admin;
 use App\Http\Controllers\Postcheck;
-use App\Http\Controllers\User;
+use App\Http\Controllers\Search;
 use App\Http\Controllers\Usercheck;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -108,11 +107,13 @@ Route::get('/mert', function () {
 });
 
 
-Route::post("/createpost",[Postcheck::class,'store']);
+Route::post("/createpost", [Postcheck::class, 'store']);
 
 
-Route::get('/user/profile',[Postcheck::class,'return']);
+Route::get('/user/profile', [Postcheck::class, 'return']);
+Route::get("/search/{keyword}/{sort}", [Search::class,'result']);
 
-
-
+Route::get('/upload', function () {
+    return view("deneme");
+});
 

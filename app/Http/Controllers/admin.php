@@ -29,7 +29,7 @@ class admin extends Controller
             $photo = str_replace(" ", "+", $user->name)."+". str_replace(" ", "+", $user->surname);
             $photo = "https://ui-avatars.com/api/?name=" . $photo . "&color=7F9CF5&background=EBF4FF";
 
-        }
+        }   else{$photo=url("storage/".$user->profile_photo_path);}
 
         return view('admin.profile_detail', ['user' => $user,'photo'=>$photo]);
         } else {

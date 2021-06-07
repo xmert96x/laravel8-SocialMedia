@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('assets/profile')}}/menu.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <script src="{{ asset('js/app.js') }}"></script>
 
 <style type="text/css">
 
