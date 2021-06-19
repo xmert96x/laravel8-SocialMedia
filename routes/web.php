@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin;
+use App\Http\Controllers\Pagecheck;
 use App\Http\Controllers\Postcheck;
 use App\Http\Controllers\Search;
 use App\Http\Controllers\Usercheck;
@@ -26,17 +27,65 @@ Route::get('/', function () {
     }
 });
 
-Route::get('/admin', function () {
-    return view('admin.index');
+
+Route::group([
+    'prefix' => 'admin',
+    'middleware' => ['role']
+], function () {
+    Route::get('/', [admin::class, "index"]);
+    Route::get('userlist', function () {
+        return view('admin.user_detail_list');
+    });
+    Route::get('profile/{id}', [admin::class, "user_detail"]);
 });
-
-
+Route::get('admin/login', function () {
+    return view("admin._login");
+})->middleware("page");
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
 
+Route::group([
+    'prefix' => 'profile/{id}',
+    'where' => [
+        'id' => '[0-9]+'
+    ],
+], function () {
+    Route::get("/", [Usercheck::class, "timeline"]);
+    Route::get('edit', [Usercheck::class, "edit"]);
+    Route::get('friendlist', [Usercheck::class, "friend_list"]);
+});
 
+
+Route::group([
+    'prefix' => 'request/{id}',
+    'where' => [
+        'id' => '[0-9]+'
+    ],
+], function () {
+    Route::get('/', [Usercheck::class, "request"]);
+    Route::get('deny', [Usercheck::class, "deny_request"]);
+    Route::get('undo', [Usercheck::class, "undo_request"]);
+    Route::get('accept', [Usercheck::class, "accept"]);
+
+});
+
+
+Route::get('friend/{id}/delete', [Usercheck::class, "delete"]);
+Route::post("/createpost", [Postcheck::class, 'store']);
+Route::get('/user/profile', [Postcheck::class, 'return']);
+Route::get("/search/{keyword}/{sort}", [Search::class, 'result']);
+
+
+/*
+
+Route::get('/dede13', function () {
+    return view("user.deneme");
+});
+Route::get('/mert', function () {
+    return view("deneme");
+});
 
 
 Route::get('/dede2/{color}', function ($color) {
@@ -44,15 +93,7 @@ Route::get('/dede2/{color}', function ($color) {
 });
 
 
-Route::get('/dede5', function () {
-    return view('deneme');
-});
 
-
-Route::get("profile/{id}", [Usercheck::class, "timeline"])->where('id', '[0-9]+');
-Route::get('profile/{id}/edit', [Usercheck::class, "edit"]);
-//Route::get("request/{id}/{page}", [Usercheck::class, "deny_request"])->where('name', 'deny');
-//Route::get("request/{id}/{id2}", [Usercheck::class, "request"])->where('id', '[0-9]+');
 
 
 /*Route::get("request/{id}/{id2}",
@@ -78,42 +119,10 @@ Route::get('profile/{id}/edit', [Usercheck::class, "edit"]);
         }
         return redirect()->back();
     });*/
-Route::group([
-    'prefix' => 'request/{id}',
-    'where' => [
-        'id'=> '[0-9]+'
-    ],
-], function () {
-    Route::get('/', [Usercheck::class, "request"]);
-    Route::get('deny', [Usercheck::class, "deny_request"]);
-    Route::get('undo', [Usercheck::class, "undo_request"]);
-    Route::get('accept', [Usercheck::class, "accept"]);
 
+Route::get('/pagecheck', [Pagecheck::class, "check"]);
+
+
+Route::get('/dede5', function () {
+    return view('deneme');
 });
-
-Route::get('admin/userlist', [admin::class, "userlist"]);
-Route::get('admin/profile/{id}', [admin::class, "user_detail"]);
-
-Route::get('friend/{id}/delete', [Usercheck::class, "delete"]);
-
-Route::get('profile/{id}/friendlist', [Usercheck::class, "friend_list"]);
-
-
-Route::get('/dede13', function () {
-    return view("user.deneme");
-});
-Route::get('/mert', function () {
-    return view("deneme");
-});
-
-
-Route::post("/createpost", [Postcheck::class, 'store']);
-
-
-Route::get('/user/profile', [Postcheck::class, 'return']);
-Route::get("/search/{keyword}/{sort}", [Search::class,'result']);
-
-Route::get('/upload', function () {
-    return view("deneme");
-});
-

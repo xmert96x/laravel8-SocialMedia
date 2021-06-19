@@ -43,7 +43,7 @@
         }
 
         .search table tr:hover {
-            cursor: pointer;
+
         }
 
         .search table tr td.image {

@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use Livewire\WithPagination;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+use phpDocumentor\Reflection\DocBlock\Tags\Link;
 
 class Searchpage extends Component
-{   public $test;
+{    use WithPagination;
+
+    public $test      = 4;
     public $request   = "";
     public $direction = "";
     public $result    = [];
@@ -17,7 +20,11 @@ class Searchpage extends Component
     {
         $this->request = $item;
         $this->search = $item;
-        $this->direction = $direction;
+
+        if ($direction = 0) $this->sort();
+        if ($direction = 1) $this->sort1();
+        if ($direction = 2) $this->sort2();
+
     }
 
     public function sort()
@@ -56,6 +63,8 @@ class Searchpage extends Component
 
                 $this->result = array_merge($this->result, $this->name->toArray());
             }
+
+
             $this->name = DB::table('users')->where('name', 'like', '%' . $this->search . '%')->get();
 
             $this->surname = DB::table('users')->where('surname', 'like', '%' . $this->search . '%')->get();
@@ -72,9 +81,9 @@ class Searchpage extends Component
         }
     }
 
-    public function sort2($edam)
+    public function sort2()
     {
-        $this->test = $edam;
+
         if (strlen($this->search) >= 2) {
             $this->explode = explode(" ", trim($this->search));
             foreach ($this->explode as $item) {
@@ -82,7 +91,7 @@ class Searchpage extends Component
 
                 $this->result = array_merge($this->result, $this->surname->toArray());
             }
-            $this->result = array_unique($this->result, SORT_REGULAR);
+
             $this->name = DB::table('users')->where('name', 'like', '%' . $item . '%')->get();
 
             $this->surname = DB::table('users')->where('surname', 'like', '%' . $item . '%')->get();
@@ -95,11 +104,13 @@ class Searchpage extends Component
 
                 $this->result = array_merge($this->result, $this->name->toArray());
             }
-
+            $this->result = array_unique($this->result, SORT_REGULAR);
 
         }
 
     }
+
+
     public function render()
     {
         return view('livewire.searchpage');

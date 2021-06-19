@@ -106,7 +106,8 @@
                             <div class="mb-4 font-medium text-sm text-green-600">
                                 {{ session('status') }}
                             </div>
-                        @endif
+                        @endif                    @php  Cache::put('page', 'user'); @endphp
+
 
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -132,7 +133,7 @@
 
 
                             <div class="row" style="justify-content:space-between">
-                                <x-jet-button class="btn btn-primary px-4">
+                                <x-jet-button class="btn btn-success px-4">
                                     {{ __('Giriş Yap') }}
                                 </x-jet-button>
 
@@ -148,15 +149,15 @@
                     </div>
                 </div>
             </div>
-            <div class="card text-white bg-primary py-5 d-md-down-none" style="text-align: justify">
-                <div class="border border-0 border-primary "
+            <div class="card text-white bg-success py-5 d-md-down-none" style="text-align: justify">
+                <div class="border border-0 border-success "
                      style="padding-left: 10px; padding-right: 10px; text-align: justify">
                     <div class=" text-center">
                         <h2>Üye ol</h2>
                         <p style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <button style="cursor: pointer" onclick="window.location.href='/register'" type="button"
-                                class="btn btn-primary active mt-3">
+                                class="btn btn-success active mt-3">
                             Şimdi üye Ol!
                         </button>
                     </div>
@@ -173,4 +174,4 @@
 </script>
 </body>
 </html>
- 
+

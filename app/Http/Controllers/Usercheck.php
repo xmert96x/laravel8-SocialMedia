@@ -20,7 +20,8 @@ class Usercheck extends Controller
                     $surname = Auth::user()->surname;
                     $email = Auth::user()->email;
                     $photo = Auth::user()->profile_photo_url;
-                    return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname,"id"=>$id];
+                    $role = Auth::user()->role;
+                    return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname, "id" => $id, "role" => $role];
 
                 } else {
                     $friend_status = false;
@@ -29,6 +30,7 @@ class Usercheck extends Controller
                     $surname = $users[0]->surname;
                     $email = $users[0]->email;
                     $photo = $users[0]->profile_photo_path;
+                    $role = $users[0]->role;
                     if (empty($photo)) {
                         $photo = str_replace(" ", "+", $name) . "+" . str_replace(" ", "+", $surname);
 
@@ -42,11 +44,11 @@ class Usercheck extends Controller
                             $data = DB::table('friend_requests')->where("sender_id", $id)->where("receiver_id", Auth::user()->id)->get();
 
 
-                            return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status, "sender" => $data[0]->sender_id, "friend_status" => $friend_status,"id"=>$id];
+                            return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status, "sender" => $data[0]->sender_id, "friend_status" => $friend_status, "id" => $id, "role" => $role];
                         }
                         if ($request > 0) {
                             $data = DB::table('friend_requests')->where("sender_id", Auth::user()->id)->where("receiver_id", $id)->get();
-                            return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status, "friend_status" => $friend_status,"id"=>$id];
+                            return ['name' => $name, "surname" => $surname, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "request" => $data[0]->status, "friend_status" => $friend_status, "id" => $id, "role" => $role];
                         }
 
                     } else {
@@ -58,7 +60,7 @@ class Usercheck extends Controller
                         if ($request > 0) {
                             $friend_status = true;
                         }
-                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname, "friend_status" => $friend_status,"id"=>$id];
+                        return ['name' => $name, "myprofile" => $myprofile, 'email' => $email, "photo" => $photo, "surname" => $surname, "friend_status" => $friend_status, "id" => $id, "role" => $role];
                     }
 
                 }

@@ -30,8 +30,8 @@ class Post extends Component
 
     public function addcomments()
     {
-        if ($this->take < $this->count) {
-            $this->take += 5;
+            if ($this->take < $this->count) {
+                $this->take += 5;
 
         }
 

@@ -42,7 +42,7 @@ class Searchbar extends Component
             }
        $this->result=array_unique($this->result, SORT_REGULAR);
         }
-
+  
         return view('livewire.searchbar');
     }
 }

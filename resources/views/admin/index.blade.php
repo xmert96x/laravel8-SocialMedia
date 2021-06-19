@@ -9,6 +9,8 @@
 @section('content')
 
 
+
+
     <div class="container-fluid p-0">
 
         <div class="row mb-2 mb-xl-3">
@@ -33,44 +35,46 @@
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Sales</h5>
-                                    <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                                    <h5 class="card-title mb-4">Toplam Üye Sayısı</h5>
+                                    <h1 class="display-5 mt-1 mb-3">{{$usercount}}</h1>
                                     <div class="mb-1">
-                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-                                        <span class="text-muted">Since last week</span>
-                                    </div>
+                                        <!-- <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
+                                         <span class="text-muted">Since last week</span>
+                                     --></div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Visitors</h5>
-                                    <h1 class="display-5 mt-1 mb-3">14.212</h1>
+                                    <h5 class="card-title mb-4">Yapılan Yorum sayısı</h5>
+                                    <h1 class="display-5 mt-1 mb-3">{{$coomnetscount}}</h1>
                                     <div class="mb-1">
-                                        <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
+                                      <!--  <span class="text-success"> <i
+                                                class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
                                         <span class="text-muted">Since last week</span>
-                                    </div>
+                                    --></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Earnings</h5>
-                                    <h1 class="display-5 mt-1 mb-3">$21.300</h1>
+                                    <h5 class="card-title mb-4">Toplam Gönderi Sayısı</h5>
+                                    <h1 class="display-5 mt-1 mb-3">{{$postcount}}</h1>
                                     <div class="mb-1">
-                                        <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
+                                        <!--<span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
                                         <span class="text-muted">Since last week</span>
-                                    </div>
+                                    --></div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title mb-4">Orders</h5>
-                                    <h1 class="display-5 mt-1 mb-3">64</h1>
+                                    <h5 class="card-title mb-4">Online Kullaınıcı Sayısı</h5>
+                                    <h1 class="display-5 mt-1 mb-3">{{$olinecount}}</h1>
                                     <div class="mb-1">
-                                        <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
+                                        <!--<span class="text-danger"> <i
+                                                class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
                                         <span class="text-muted">Since last week</span>
-                                    </div>
+                                    --></div>
                                 </div>
                             </div>
                         </div>
@@ -82,7 +86,7 @@
                 <div class="card flex-fill w-100">
                     <div class="card-header">
 
-                        <h5 class="card-title mb-0">Recent Movement</h5>
+                        <h5 class="card-title mb-0">Aylı Gönderi Sayısı</h5>
                     </div>
                     <div class="card-body py-3">
                         <div class="chart chart-sm">
@@ -143,7 +147,7 @@
                 <div class="card flex-fill">
                     <div class="card-header">
 
-                        <h5 class="card-title mb-0">Calendar</h5>
+                        <h5 class="card-title mb-0">Takvim</h5>
                     </div>
                     <div class="card-body d-flex">
                         <div class="align-self-center w-100">
@@ -178,56 +182,56 @@
                             <td>Project Apollo</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-success">Done</span></td>
+                            <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">Vanessa Tucker</td>
                         </tr>
                         <tr>
                             <td>Project Fireball</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-danger">Cancelled</span></td>
+                            <td><span class="badge bg-danger">Cancelled</span></td>
                             <td class="d-none d-md-table-cell">William Harris</td>
                         </tr>
                         <tr>
                             <td>Project Hades</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-success">Done</span></td>
+                            <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">Sharon Lessman</td>
                         </tr>
                         <tr>
                             <td>Project Nitro</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-warning">In progress</span></td>
+                            <td><span class="badge bg-warning">In progress</span></td>
                             <td class="d-none d-md-table-cell">Vanessa Tucker</td>
                         </tr>
                         <tr>
                             <td>Project Phoenix</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-success">Done</span></td>
+                            <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">William Harris</td>
                         </tr>
                         <tr>
                             <td>Project X</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-success">Done</span></td>
+                            <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">Sharon Lessman</td>
                         </tr>
                         <tr>
                             <td>Project Romeo</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-success">Done</span></td>
+                            <td><span class="badge bg-success">Done</span></td>
                             <td class="d-none d-md-table-cell">Christina Mason</td>
                         </tr>
                         <tr>
                             <td>Project Wombat</td>
                             <td class="d-none d-xl-table-cell">01/01/2020</td>
                             <td class="d-none d-xl-table-cell">31/06/2020</td>
-                            <td><span class="badge badge-warning">In progress</span></td>
+                            <td><span class="badge bg-warning">In progress</span></td>
                             <td class="d-none d-md-table-cell">William Harris</td>
                         </tr>
                         </tbody>
@@ -252,38 +256,28 @@
     </div>
 
     <script src="{{asset('assets/admin')}}/js/vendor.js"></script>
-    <script src="{{asset('assets/admin')}}/js/app.js"></script>
 
 
     <script>
-        $(function() {
-            var ctx = document.getElementById('chartjs-dashboard-line').getContext("2d");
+        document.addEventListener("DOMContentLoaded", function () {
+            var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
             var gradient = ctx.createLinearGradient(0, 0, 0, 225);
-            gradient.addColorStop(0, 'rgba(215, 227, 244, 1)');
-            gradient.addColorStop(1, 'rgba(215, 227, 244, 0)');
+            gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+            gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
             // Line chart
             new Chart(document.getElementById("chartjs-dashboard-line"), {
-                type: 'line',
+                type: "line",
                 data: {
-                    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    labels: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylul", "Ekim", "Kasım", "Aralık"],
                     datasets: [{
-                        label: "Sales ($)",
+                        label: "GÖnderi",
                         fill: true,
                         backgroundColor: gradient,
                         borderColor: window.theme.primary,
                         data: [
-                            2115,
-                            1562,
-                            1584,
-                            1892,
-                            1587,
-                            1923,
-                            2566,
-                            2448,
-                            2805,
-                            3438,
-                            2917,
-                            3327
+                            @for ($i = 0; $i < 12; $i++)
+                                {{$name[$i][1].","}}
+                                @endfor
                         ]
                     }]
                 },
@@ -312,7 +306,7 @@
                         }],
                         yAxes: [{
                             ticks: {
-                                stepSize: 1000
+                                stepSize: {{2}}
                             },
                             display: true,
                             borderDash: [3, 3],
@@ -326,10 +320,10 @@
         });
     </script>
     <script>
-        $(function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Pie chart
             new Chart(document.getElementById("chartjs-dashboard-pie"), {
-                type: 'pie',
+                type: "pie",
                 data: {
                     labels: ["Chrome", "Firefox", "IE"],
                     datasets: [{
@@ -354,10 +348,10 @@
         });
     </script>
     <script>
-        $(function() {
+        document.addEventListener("DOMContentLoaded", function () {
             // Bar chart
             new Chart(document.getElementById("chartjs-dashboard-bar"), {
-                type: 'bar',
+                type: "bar",
                 data: {
                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: [{
@@ -398,77 +392,77 @@
         });
     </script>
     <script>
-        $(function() {
-            $("#world_map").vectorMap({
-                map: "world_mill",
-                normalizeFunction: "polynomial",
-                hoverOpacity: .7,
-                hoverColor: false,
-                regionStyle: {
-                    initial: {
-                        fill: "#e3eaef"
-                    }
+        document.addEventListener("DOMContentLoaded", function () {
+            var markers = [{
+                coords: [31.230391, 121.473701],
+                name: "Shanghai"
+            },
+                {
+                    coords: [28.704060, 77.102493],
+                    name: "Delhi"
                 },
+                {
+                    coords: [6.524379, 3.379206],
+                    name: "Lagos"
+                },
+                {
+                    coords: [35.689487, 139.691711],
+                    name: "Tokyo"
+                },
+                {
+                    coords: [23.129110, 113.264381],
+                    name: "Guangzhou"
+                },
+                {
+                    coords: [40.7127837, -74.0059413],
+                    name: "New York"
+                },
+                {
+                    coords: [34.052235, -118.243683],
+                    name: "Los Angeles"
+                },
+                {
+                    coords: [41.878113, -87.629799],
+                    name: "Chicago"
+                },
+                {
+                    coords: [51.507351, -0.127758],
+                    name: "London"
+                },
+                {
+                    coords: [40.416775, -3.703790],
+                    name: "Madrid "
+                }
+            ];
+            var map = new JsVectorMap({
+                map: "world",
+                selector: "#world_map",
+                zoomButtons: true,
+                markers: markers,
                 markerStyle: {
                     initial: {
-                        "r": 9,
-                        "fill": window.theme.primary,
-                        "fill-opacity": .95,
-                        "stroke": "#fff",
-                        "stroke-width": 7,
-                        "stroke-opacity": .4
+                        r: 9,
+                        strokeWidth: 7,
+                        stokeOpacity: .4,
+                        fill: window.theme.primary
                     },
                     hover: {
-                        "stroke": "#fff",
-                        "fill-opacity": 1,
-                        "stroke-width": 1.5
+                        fill: window.theme.primary,
+                        stroke: window.theme.primary
                     }
-                },
-                backgroundColor: "transparent",
-                zoomOnScroll: false,
-                markers: [{
-                    latLng: [31.230391, 121.473701],
-                    name: "Shanghai"
-                }, {
-                    latLng: [28.704060, 77.102493],
-                    name: "Delhi"
-                }, {
-                    latLng: [6.524379, 3.379206],
-                    name: "Lagos"
-                }, {
-                    latLng: [35.689487, 139.691711],
-                    name: "Tokyo"
-                }, {
-                    latLng: [23.129110, 113.264381],
-                    name: "Guangzhou"
-                }, {
-                    latLng: [40.7127837, -74.0059413],
-                    name: "New York"
-                }, {
-                    latLng: [34.052235, -118.243683],
-                    name: "Los Angeles"
-                }, {
-                    latLng: [41.878113, -87.629799],
-                    name: "Chicago"
-                }, {
-                    latLng: [51.507351, -0.127758],
-                    name: "London"
-                }, {
-                    latLng: [40.416775, -3.703790],
-                    name: "Madrid"
-                }]
+                }
             });
-            setTimeout(function() {
-                $(window).trigger('resize');
-            }, 250)
+            window.addEventListener("resize", () => {
+                map.updateSize();
+            });
         });
     </script>
     <script>
-        $(function() {
-            $('#datetimepicker-dashboard').datetimepicker({
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("datetimepicker-dashboard").flatpickr({
                 inline: true,
-                sideBySide: false,
-                format: 'L'
+                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+                nextArrow: "<span title=\"Next month\">&raquo;</span>",
             });
         });
     </script>

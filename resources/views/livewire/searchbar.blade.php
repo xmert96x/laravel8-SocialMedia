@@ -9,6 +9,7 @@
             position: relative
         }
     </style>
+
     <form action="{{url("search/".$search."/0")}}">
 
         <div class="input-group">
@@ -31,7 +32,8 @@
         @if(strlen($search)>=2)
             @foreach($result as $item)
                 <a href="{{url("profile/".$item->id)}}" target="_self">
-                    <div> @php $userdata=App\Http\Controllers\Usercheck::Userdata($item->id);// print_r( $userdata); @endphp
+                    <div
+                        class="result"> @php $userdata=App\Http\Controllers\Usercheck::Userdata($item->id);// print_r( $userdata); @endphp
 
 
                         <img src="{{$userdata["photo"]}}" alt="..."
@@ -121,6 +123,10 @@
         background-color: #e9e9e9;
     }
 
+    .result:hover {
+        background-color: #e9e9e9 !important;
+    }
+
     /*when navigating through the items using the arrow keys:*/
     .autocomplete-active {
         background-color: DodgerBlue !important;
@@ -130,6 +136,38 @@
 </style>
 @livewireScripts
 <script>
+    y = document.getElementById("myInputautocomplete-list");
+    var counter = 0;
+
+    function dedect(event) {
+        if (event.isComposing || event.keyCode === 40) {
+            if (counter < document.getElementsByClassName("result").length) document.getElementsByClassName("result")[counter].style.backgroundColor = "rgb(92, 184, 92)";
+
+            if (counter >= 5) {
+                y.scrollTo(0, y.scrollTop + 72)
+            }
+            if (counter >= 1) {
+                document.getElementsByClassName("result")[counter - 1].style.backgroundColor = "white";
+            }
+            counter++;
+        }
+
+        if (event.isComposing || event.keyCode === 38) {
+            if (counter >= 1) document.getElementsByClassName("result")[counter].style.backgroundColor = "white";
+            if (counter > 0) {
+                counter--;
+            }
+            if (counter >= 5) {
+                y.scrollTo(0, y.scrollTop - 72)
+            }
+            document.getElementsByClassName("result")[counter].style.backgroundColor = "rgb(92, 184, 92)";
+
+
+        }
+        if (event.isComposing || event.keyCode === 13) {document.getElementsByClassName("result")[counter].click();
+        }
+    }
+
 
     document.addEventListener("click", function () {
         var x = document.activeElement.className;
@@ -137,8 +175,18 @@
         if (x === "form-control formcon") {
             y.style.visibility = "visible";
             y.scrollTo(0, 0);
+
+
+            document.addEventListener("keydown", dedect
+            );
+
         } else {
+            counter = 0;
+            document.removeEventListener("keydown", dedect
+            );
             y.style.visibility = "hidden";
         }
-    });</script>
+    })
+    ;
+</script>
 

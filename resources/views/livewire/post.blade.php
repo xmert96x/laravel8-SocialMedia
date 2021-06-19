@@ -109,15 +109,27 @@
                     <em class="text-xs text-muted">Posted on <span
                             class="text-danger">Dec 08, 2014</span></em>
                     <br> @php $media = $item["media"] ;
-            $media = json_decode($media);  @endphp
+      try {
+  $media = json_decode($media);
+} catch (Exception $e) {
+    echo 'Yakalanan olağandışılık: ',  $e->getMessage(), "\n";
+}
+try {
+  $media = json_decode($media);
+} catch (Exception $e) {
+    echo 'Yakalanan olağandışılık: ',  $e->getMessage(), "\n";
+}
+                    @endphp
 
 
-                 {{print_r($media)}}
+                    @if(is_array($media))  @foreach($media as $item) <img src="{{url("/storage/".$item)}}" style="max-width: 100px; max-height: 100px;"> @endforeach @endif
+
+
                 </div> <!-- /.media-body -->
             </div><!-- /.media -->   @endforeach
             <div>
                 <form enctype="multipart/form-data" action="#" class="form-horizontal inner-all">
-                    <div class="has-feedback no-margin   " style="position: relative">
+                    <div class="has-feedback no-margin   " style="  position: relative">
                         @if (Auth::check())
                             <div style="padding: 0;">    <textarea wire:target="Savecommnets"
                                                                    wire:loading.attr="disabled"
